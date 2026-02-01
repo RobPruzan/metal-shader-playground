@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0d0d0f;
+  --background: #000000;
   --foreground: #e0e0e0;
 }
 
@@ -31,11 +31,11 @@ body {
 
 /* Monaco editor overrides */
 .monaco-editor {
-  --vscode-editor-background: #1a1a1e !important;
+  --vscode-editor-background: #000000 !important;
 }
 
 .monaco-editor .margin {
-  background: #1a1a1e !important;
+  background: #000000 !important;
 }
 
 /* Custom scrollbar */

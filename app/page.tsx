@@ -8,7 +8,7 @@ import { SHADER_EXAMPLES, type ShaderExample } from "./shader-examples";
 const MonacoEditor = dynamic(() => import("@monaco-editor/react"), {
   ssr: false,
   loading: () => (
-    <div className="flex items-center justify-center h-full bg-[#1a1a1e]">
+    <div className="flex items-center justify-center h-full bg-black">
       <div className="text-[#4a4a4e]">Loading editor...</div>
     </div>
   ),
@@ -202,7 +202,7 @@ export default function MetalPlayground() {
   };
 
   return (
-    <div className="h-screen w-screen flex flex-col bg-[#0d0d0f] overflow-hidden">
+    <div className="h-screen w-screen flex flex-col bg-black overflow-hidden">
       {/* Top bar */}
       <div className="h-12 flex items-center justify-between px-4 border-b border-[#1f1f23]">
         <div className="flex items-center gap-4">
@@ -212,7 +212,7 @@ export default function MetalPlayground() {
               const example = SHADER_EXAMPLES.find(ex => ex.name === e.target.value);
               if (example) handleExampleChange(example);
             }}
-            className="bg-[#1a1a1e] text-[#a0a0a0] text-sm px-3 py-1.5 rounded border border-[#2a2a2e] focus:outline-none focus:border-[#3a3a4e]"
+            className="bg-black text-[#a0a0a0] text-sm px-3 py-1.5 rounded border border-[#2a2a2e] focus:outline-none focus:border-[#3a3a4e]"
           >
             {SHADER_EXAMPLES.map(example => (
               <option key={example.name} value={example.name}>
@@ -251,7 +251,7 @@ export default function MetalPlayground() {
 
       {/* Settings panel */}
       {showSettings && (
-        <div className="h-10 flex items-center gap-6 px-4 border-b border-[#1f1f23] bg-[#111114]">
+        <div className="h-10 flex items-center gap-6 px-4 border-b border-[#1f1f23] bg-black">
           <label className="flex items-center gap-2 text-sm text-[#5a5a5e]">
             Target FPS
             <input
@@ -306,7 +306,7 @@ export default function MetalPlayground() {
 
         {/* Canvas panel */}
         <div className="w-1/2 flex flex-col">
-          <div ref={canvasContainerRef} className="flex-1 flex items-center justify-center bg-[#08080a] min-h-0 overflow-hidden relative">
+          <div ref={canvasContainerRef} className="flex-1 flex items-center justify-center bg-black min-h-0 overflow-hidden relative">
             {isRunning ? (
               <canvas
                 ref={canvasRef}
@@ -314,7 +314,7 @@ export default function MetalPlayground() {
                 height={600}
                 onMouseMove={handleMouseMove}
                 onClick={handleClick}
-                className="max-w-full max-h-full object-contain cursor-crosshair"
+                className="w-full h-full cursor-crosshair"
                 style={{ imageRendering: "auto" }}
               />
             ) : (
